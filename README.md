@@ -1,7 +1,7 @@
 # PyTerprete
 Un interprete de ordenes piñata para linux hecho en python.
 
-**FINALIDAD**
+## Motivacion
 Practicar lo visto en el curso de python.
 
 
