@@ -5,7 +5,9 @@ import os, sys
 path = "/home/rozy/RepositorioGit/Python/"
 dirs = os.listdir( path )
 
-# This would print all the files and directories
+	# This would print all the files and directories
 for file in dirs:
-   print(" [ %s ]" % file)
- 
+		print(" [ %s ]" % file)
+
+
+
