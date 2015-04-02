@@ -40,7 +40,7 @@ if len(sys.argv) == 2:
 
 while True:
 	opcion = input("\n@@> ")
-	if	opcion == "listar":
+	if opcion == "listar":
 		direccion = input("Ruta> ")
 		listar(direccion)
 	
