@@ -25,6 +25,7 @@ import sys
 from funciones import saludo_inicial
 from funciones import opciones
 from funciones import listar
+from funciones import limpiar
 
 if len(sys.argv) == 2:
 
@@ -37,7 +38,8 @@ if len(sys.argv) == 2:
 	if sys.argv[1] == "-b":
 		saludo_inicial()
 
-
+limpiar()
+saludo_inicial()
 while True:
 	opcion = input("\n@@> ")
 	if opcion == "listar":
