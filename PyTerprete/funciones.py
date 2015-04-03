@@ -18,6 +18,8 @@ Modo de Empleo: pyterpreter [comando] [opcion]
 	-v	:	Version.
 	""")
 
+def limpiar():
+	os.system('clear')
 
 def listar(direccion):
 	archivos = os.listdir(direccion)
