@@ -46,6 +46,8 @@ while True:
 		direccion = input("Ruta> ")
 		listar(direccion)
 	
+	elif opcion == "limpiar":
+		limpiar()
 	else:
 		print ("No es un comando valido")
 
