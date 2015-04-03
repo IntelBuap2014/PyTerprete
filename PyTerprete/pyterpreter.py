@@ -41,9 +41,8 @@ if len(sys.argv) == 2:
 
 limpiar()
 saludo_inicial()
-try:
-	while True:
-	
+while True:
+	try:	
 		opcion = input("\n@@> ")
 		opcion = opcion.lower()  # convertimos la entrada en minisculas
 		opcion = opcion.split(sep=" ")  # separamos la cadena por el espacio.
@@ -59,5 +58,5 @@ try:
 	
 		else:
 			print ("No es un comando valido")
-except EOFError:
-	print ("Error de lectura")
+	except EOFError:
+		print ("Error de lectura")
