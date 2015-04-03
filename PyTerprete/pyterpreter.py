@@ -26,7 +26,9 @@ import sys
 from funciones import saludo_inicial
 from funciones import opciones
 from funciones import listar
-from funciones import limpiar, rehubicar
+from funciones import limpiar
+from funciones import rehubicar
+from funciones import inicializacion
 
 if len(sys.argv) == 2:
 
@@ -40,6 +42,7 @@ if len(sys.argv) == 2:
 		saludo_inicial()
 
 limpiar()
+inicializacion()
 saludo_inicial()
 while True:
 	try:	
@@ -48,15 +51,27 @@ while True:
 		opcion = opcion.split(sep=" ")  # separamos la cadena por el espacio.
 		
 		if opcion[0] == "listar":
-			listar(opcion[1])
+			try:
+				listar(opcion[1])
+			except FileNotFoundError:
+				print ("\nEl archivo no existe")
 		
 		elif opcion[0] == "limpiar":
 			limpiar()
 		
 		elif opcion[0] == "rehubicar":
-			rehubicar(opcion[1])
+			try:
+				rehubicar(opcion[1])
+			except FileNotFoundError:
+				print ("No existe el directorio")
+			except NotADirectoryError:
+				print ("No es un directorio")
+
+		elif opcion[0] == "salir":
+			sys.exit()
 	
 		else:
 			print ("No es un comando valido")
+	
 	except EOFError:
-		print ("Error de lectura")
+		print ("\nError de lectura")

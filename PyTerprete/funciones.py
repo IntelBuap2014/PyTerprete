@@ -24,6 +24,7 @@
 
 
 import os
+import shutil
 
 def saludo_inicial():
 	print ("""
@@ -35,6 +36,7 @@ def saludo_inicial():
 			listar
 			limpiar
 			rehubicar
+			salir
 	""")
 
 
@@ -59,3 +61,10 @@ def listar(direccion):
 
 def rehubicar(direccion):
 	os.chdir(direccion)
+
+def inicializacion():
+	ruta = os.path.expanduser('~')
+	os.chdir(ruta)
+
+def copiar():
+	pass
