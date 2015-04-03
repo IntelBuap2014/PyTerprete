@@ -6,6 +6,10 @@ def saludo_inicial():
 		Este interprete fue realizadon con fines de aprendizaje.
 		Si tienes algunas sugerencia estamos abiertos a que cualquier 
 		caracteristica interezante que pudieramos agregar.
+		De momento solo hay 3 comandos:
+			listar
+			limpiar
+			rehubicar
 	""")
 
 
@@ -18,10 +22,15 @@ Modo de Empleo: pyterpreter [comando] [opcion]
 	-v	:	Version.
 	""")
 
+
 def limpiar():
 	os.system('clear')
+
 
 def listar(direccion):
 	archivos = os.listdir(direccion)
 	for archivo in archivos:
 		print (archivo, end=" ")
+
+def rehubicar(direccion):
+	os.chdir(direccion)

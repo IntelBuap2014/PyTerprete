@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ Licencia GPL
 PyTerprete
 
@@ -25,7 +26,7 @@ import sys
 from funciones import saludo_inicial
 from funciones import opciones
 from funciones import listar
-from funciones import limpiar
+from funciones import limpiar, rehubicar
 
 if len(sys.argv) == 2:
 
@@ -40,14 +41,23 @@ if len(sys.argv) == 2:
 
 limpiar()
 saludo_inicial()
-while True:
-	opcion = input("\n@@> ")
-	if opcion == "listar":
-		direccion = input("Ruta> ")
-		listar(direccion)
+try:
+	while True:
 	
-	elif opcion == "limpiar":
-		limpiar()
-	else:
-		print ("No es un comando valido")
-
+		opcion = input("\n@@> ")
+		opcion = opcion.lower()  # convertimos la entrada en minisculas
+		opcion = opcion.split(sep=" ")  # separamos la cadena por el espacio.
+		
+		if opcion[0] == "listar":
+			listar(opcion[1])
+		
+		elif opcion[0] == "limpiar":
+			limpiar()
+		
+		elif opcion[0] == "rehubicar":
+			rehubicar(opcion[1])
+	
+		else:
+			print ("No es un comando valido")
+except EOFError:
+	print ("Error de lectura")
