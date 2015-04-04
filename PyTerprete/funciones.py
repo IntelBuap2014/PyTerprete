@@ -40,6 +40,11 @@ def saludo_inicial():
 			salir
 	""")
 
+def despedida_final():
+	print("""
+		Adiós, gracias por venir.		
+	""")
+	os.system('sleep 1')
 
 def opciones():
 	print ("""

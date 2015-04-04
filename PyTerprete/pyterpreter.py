@@ -30,7 +30,7 @@ from funciones import limpiar
 from funciones import reubicar
 from funciones import inicializacion
 from funciones import renm
-
+from funciones import despedida_final
 if len(sys.argv) == 2:
 
 	if sys.argv[1] == "-h":
@@ -75,6 +75,9 @@ while True:
 			except IndexError:
 				print ("Número de argumentos incorrecto")	
 		elif opcion[0] == "salir":
+			limpiar()
+			despedida_final()
+			limpiar()
 			sys.exit()
 		else:
 			print ("No es un comando valido")
