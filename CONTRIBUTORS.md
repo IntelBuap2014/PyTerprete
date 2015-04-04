@@ -9,3 +9,4 @@ nombre <Direccion de Correo>
 ```
 
 Adrian Perez Dominguez <adrian@aztli.org>
+Celina Osorio Ochoa <chelinoska@gmail.com>
