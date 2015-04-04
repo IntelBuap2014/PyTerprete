@@ -27,8 +27,9 @@ from funciones import saludo_inicial
 from funciones import opciones
 from funciones import listar
 from funciones import limpiar
-from funciones import rehubicar
+from funciones import reubicar
 from funciones import inicializacion
+from funciones import renm
 
 if len(sys.argv) == 2:
 
@@ -59,17 +60,22 @@ while True:
 		elif opcion[0] == "limpiar":
 			limpiar()
 		
-		elif opcion[0] == "rehubicar":
+		elif opcion[0] == "reubicar":
 			try:
-				rehubicar(opcion[1])
+				reubicar(opcion[1])
 			except FileNotFoundError:
 				print ("No existe el directorio")
 			except NotADirectoryError:
 				print ("No es un directorio")
-
+		elif opcion[0] == "renm":
+			try:
+				renm(opcion[1],opcion[2])
+			except FileNotFoundError:
+				print ("No existe el arhivo o directorio ", opcion[1]);
+			except IndexError:
+				print ("Número de argumentos incorrecto")	
 		elif opcion[0] == "salir":
 			sys.exit()
-	
 		else:
 			print ("No es un comando valido")
 	

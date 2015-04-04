@@ -29,24 +29,25 @@ import shutil
 def saludo_inicial():
 	print ("""
 		Bienvenido a Pyterpreter.
-		Este interprete fue realizadon con fines de aprendizaje.
-		Si tienes algunas sugerencia estamos abiertos a que cualquier 
-		caracteristica interezante que pudieramos agregar.
-		De momento solo hay 3 comandos:
+		Este intérprete fue realizado con fines de aprendizaje.
+		Si tienes algunas sugerencia estamos abiertos a cualquier 
+		característica interesante que pudieramos agregar.
+		De momento solo hay 5 comandos:
 			listar
 			limpiar
-			rehubicar
+			reubicar
+			renm (renombrar)
 			salir
 	""")
 
 
 def opciones():
 	print ("""
-Modo de Empleo: pyterpreter [comando] [opcion]
-	Opciones posibles para usar con el interprete:
-	-h	:	Ayuda (lo que te imprimiria este mensaje).
+Modo de Empleo: pyterpreter [comando] [opción]
+	Opciones posibles para usar con el intérprete:
+	-h	:	Ayuda (lo que te imprimiría este mensaje).
 	-b	:	Mensaje de Bienvenida.
-	-v	:	Version.
+	-v	:	Versión.
 	""")
 
 
@@ -59,12 +60,15 @@ def listar(direccion):
 	for archivo in archivos:
 		print (archivo, end=" ")
 
-def rehubicar(direccion):
+def reubicar(direccion):
 	os.chdir(direccion)
 
 def inicializacion():
 	ruta = os.path.expanduser('~')
 	os.chdir(ruta)
+
+def renm( origen, destino ):
+	os.rename(origen, destino)
 
 def copiar():
 	pass
