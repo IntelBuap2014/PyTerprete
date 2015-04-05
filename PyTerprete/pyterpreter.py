@@ -31,6 +31,7 @@ from funciones import reubicar
 from funciones import inicializacion
 from funciones import renm
 from funciones import eliminar
+from funciones import mostrar
 from funciones import despedida_final
 
 if len(sys.argv) == 2:
@@ -90,6 +91,15 @@ while True:
 				print ("Uso: eliminar <ruta-de-archivo>")
 			except OSError:
 				print("¡Ruta de directorio!")
+		elif opcion[0] == "mostrar":
+			try:
+				mostrar(opcion[1])
+			except FileNotFoundError:
+				print("No existe el archivo")
+			except IndexError:
+				print("Número de argumentos incorrecto")
+			except IsADirectoryError:
+				print("[",opcion[1],"]","Es un directorio")
 		elif opcion[0] == "salir":
 			limpiar()
 			despedida_final()
