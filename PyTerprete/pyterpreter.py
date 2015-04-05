@@ -79,6 +79,7 @@ while True:
 				print ("No existe el arhivo o directorio ", opcion[1]);
 			except IndexError:
 				print ("Número de argumentos incorrecto")
+				print ("Uso: renm <nombre-actual> <nuevo-nombre>")
 		elif opcion[0] == "eliminar":
 			try:
 				eliminar(opcion[1])
@@ -86,6 +87,7 @@ while True:
 				print("No existe el archivo");
 			except IndexError:
 				print ("Número de argumentos incorrecto")
+				print ("Uso: eliminar <ruta-de-archivo>")
 			except OSError:
 				print("¡Ruta de directorio!")
 		elif opcion[0] == "salir":
