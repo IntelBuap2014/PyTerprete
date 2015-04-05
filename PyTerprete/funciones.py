@@ -32,12 +32,13 @@ def saludo_inicial():
 		Este intérprete fue realizado con fines de aprendizaje.
 		Si tienes algunas sugerencia estamos abiertos a cualquier 
 		característica interesante que pudieramos agregar.
-		De momento solo hay 6 comandos:
+		De momento solo hay 7 comandos:
 			listar
 			limpiar
 			reubicar
 			renm (renombrar)
 			eliminar
+			mostrar
 			salir
 	""")
 
@@ -78,6 +79,12 @@ def renm(origen,destino):
 
 def eliminar(ruta):
 	os.remove(ruta);
+
+def mostrar(nomArchivo):
+	archivo = open(nomArchivo)
+	for linea in archivo:
+	  print(linea, end='')
+	archivo.close()
 
 def copiar():
 	pass
