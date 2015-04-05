@@ -32,11 +32,12 @@ def saludo_inicial():
 		Este intérprete fue realizado con fines de aprendizaje.
 		Si tienes algunas sugerencia estamos abiertos a cualquier 
 		característica interesante que pudieramos agregar.
-		De momento solo hay 5 comandos:
+		De momento solo hay 6 comandos:
 			listar
 			limpiar
 			reubicar
 			renm (renombrar)
+			eliminar
 			salir
 	""")
 
@@ -72,8 +73,11 @@ def inicializacion():
 	ruta = os.path.expanduser('~')
 	os.chdir(ruta)
 
-def renm( origen, destino ):
+def renm(origen,destino):
 	os.rename(origen, destino)
+
+def eliminar(ruta):
+	os.remove(ruta);
 
 def copiar():
 	pass

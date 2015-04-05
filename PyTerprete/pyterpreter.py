@@ -30,7 +30,9 @@ from funciones import limpiar
 from funciones import reubicar
 from funciones import inicializacion
 from funciones import renm
+from funciones import eliminar
 from funciones import despedida_final
+
 if len(sys.argv) == 2:
 
 	if sys.argv[1] == "-h":
@@ -56,7 +58,8 @@ while True:
 				listar(opcion[1])
 			except FileNotFoundError:
 				print ("\nEl archivo no existe")
-		
+			except IndexError:
+				print ("Número de argumentos incorrecto")	
 		elif opcion[0] == "limpiar":
 			limpiar()
 		
@@ -67,13 +70,24 @@ while True:
 				print ("No existe el directorio")
 			except NotADirectoryError:
 				print ("No es un directorio")
+			except IndexError:
+				print ("Número de argumentos incorrecto")
 		elif opcion[0] == "renm":
 			try:
 				renm(opcion[1],opcion[2])
 			except FileNotFoundError:
 				print ("No existe el arhivo o directorio ", opcion[1]);
 			except IndexError:
-				print ("Número de argumentos incorrecto")	
+				print ("Número de argumentos incorrecto")
+		elif opcion[0] == "eliminar":
+			try:
+				eliminar(opcion[1])
+			except FileNotFoundError:
+				print("No existe el archivo");
+			except IndexError:
+				print ("Número de argumentos incorrecto")
+			except OSError:
+				print("¡Ruta de directorio!")
 		elif opcion[0] == "salir":
 			limpiar()
 			despedida_final()
