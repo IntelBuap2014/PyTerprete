@@ -46,14 +46,16 @@ if len(sys.argv) == 2:
 	if sys.argv[1] == "-b":
 		saludo_inicial()
 
+
 limpiar()
 inicializacion()
 saludo_inicial()
+
 while True:
 	try:	
 		opcion = input("\n@@> ")
-		opcion = opcion.lower()  # convertimos la entrada en minisculas
 		opcion = opcion.split(sep=" ")  # separamos la cadena por el espacio.
+		opcion[0] = opcion[0].lower()  # convertimos la entrada en minisculasi.
 		
 		if opcion[0] == "listar":
 			try:
@@ -61,7 +63,7 @@ while True:
 			except FileNotFoundError:
 				print ("\nEl archivo no existe")
 			except IndexError:
-				print ("Número de argumentos incorrecto")	
+				print ("Número de argumentos incorrecto")
 		elif opcion[0] == "limpiar":
 			limpiar()
 		
