@@ -33,6 +33,7 @@ from funciones import renm
 from funciones import eliminar
 from funciones import mostrar
 from funciones import despedida_final
+from funciones import midir
 
 if len(sys.argv) == 2:
 
@@ -73,6 +74,7 @@ while True:
 				print ("No es un directorio")
 			except IndexError:
 				print ("Número de argumentos incorrecto")
+		
 		elif opcion[0] == "renm":
 			try:
 				renm(opcion[1],opcion[2])
@@ -81,6 +83,7 @@ while True:
 			except IndexError:
 				print ("Número de argumentos incorrecto")
 				print ("Uso: renm <nombre-actual> <nuevo-nombre>")
+		
 		elif opcion[0] == "eliminar":
 			try:
 				eliminar(opcion[1])
@@ -91,6 +94,7 @@ while True:
 				print ("Uso: eliminar <ruta-de-archivo>")
 			except OSError:
 				print("¡Ruta de directorio!")
+		
 		elif opcion[0] == "mostrar":
 			try:
 				mostrar(opcion[1])
@@ -100,11 +104,16 @@ while True:
 				print("Número de argumentos incorrecto")
 			except IsADirectoryError:
 				print("[",opcion[1],"]","Es un directorio")
+		
 		elif opcion[0] == "salir":
 			limpiar()
 			despedida_final()
 			limpiar()
 			sys.exit()
+		
+		elif opcion[0] == "midir":
+			midir()
+
 		else:
 			print ("No es un comando valido")
 	

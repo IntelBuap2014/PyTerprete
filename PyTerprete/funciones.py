@@ -39,6 +39,7 @@ def saludo_inicial():
 			renm (renombrar)
 			eliminar
 			mostrar
+			midir
 			salir
 	""")
 
@@ -85,6 +86,9 @@ def mostrar(nomArchivo):
 	for linea in archivo:
 	  print(linea, end='')
 	archivo.close()
+
+def midir():
+	print (os.getcwd())
 
 def copiar():
 	pass
